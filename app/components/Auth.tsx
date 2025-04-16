@@ -46,20 +46,19 @@ export default function Auth({
       <div className='w-full relative h-fit  flex items-center justify-center  gap-2 lg:min-w-3xl min-w-sm rounded-2xl overflow-hidden shadow-sm'>
         <div className='w-full items-center  flex flex-col gap-2 justify-center h-full lg:pb-18 p-6 pb-14 bg-gradient-to-r from-tertiary to-white'>
           <div className='text-2xl font-bold capitalize'>{auth}</div>
-          {auth === 'register' ||
-            (authType === 'register' && (
-              <div className='flex h-full flex-grow flex-col gap-2 w-full'>
-                <span>Name</span>
-                <input
-                  className='w-full h-10 rounded-lg bg-white px-3 shadow-sm'
-                  type='text'
-                  name='name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder='Email'
-                />
-              </div>
-            ))}
+          {(auth === 'register' || authType === 'register') && (
+            <div className='flex h-full flex-grow flex-col gap-2 w-full'>
+              <span>Name</span>
+              <input
+                className='w-full h-10 rounded-lg bg-white px-3 shadow-sm'
+                type='text'
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
+                placeholder='Email'
+              />
+            </div>
+          )}
           <div className='flex h-full flex-grow flex-col gap-2 w-full'>
             <span>Email</span>
             <input
